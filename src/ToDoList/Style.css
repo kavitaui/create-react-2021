@@ -1,0 +1,14 @@
+.active{
+    margin:60px;
+    align-items: center;
+
+
+}
+.my-todo{
+    background-color: cornflowerblue;
+    text-align: center;
+    height:70px;
+}
+/* .child-div{
+    background-color: rgb(237, 190, 202);
+} */
