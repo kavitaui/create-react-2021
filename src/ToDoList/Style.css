@@ -5,10 +5,32 @@
 
 }
 .my-todo{
+    
     background-color: cornflowerblue;
     text-align: center;
-    height:70px;
+    height:200px;
+    display:inline-block;
+    width:max-content;
+
+   
 }
-/* .child-div{
+.child-div{
     background-color: rgb(237, 190, 202);
-} */
+   margin: 30px;
+    
+  
+}
+.submit{
+   margin:50px;
+   background-color: rgb(237, 190, 202);
+}
+ 
+.text{
+    text-align: left;
+}
+ .my-text{
+    text-align: left;
+    float:left;
+ }
+
+

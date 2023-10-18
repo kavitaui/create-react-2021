@@ -26,26 +26,31 @@ const MyTodolist = () => {
     }
     return (
         <div className='active'>
+            
           < div className="my-todo">
-            <div className='child-div'>< input type="text"
+         <div className='child-div'>
+            my todo list 
+            < input type="text" 
                 value={data}
                 onChange={(e) => { setData(e.target.value) }}
-                placeholder="input a new task"></input>
+                placeholder=" ✍️ input a new task"></input>
 
-            <button onClick={handleAddtodo}>add</button>
+            <button onClick={handleAddtodo}>Add</button>
    
 
             {list.map((item) => ( 
                  
-                  <div key={item.id} >{item.todo}< input type="radio"
+                  <div className="text" key={item.id} >{item.todo}< input type="radio" className='my-text'
                    onClick={() => { handleDeleteTodo(item.id) }} ></input>
                 </div>
                
 
             )
+           
 
 
             )}</div>
+             <button className='submit'>check list</button>
          </div>
         </div>)
 
