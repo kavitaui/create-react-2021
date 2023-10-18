@@ -29,7 +29,7 @@ const MyTodolist = () => {
             
           < div className="my-todo">
          <div className='child-div'>
-            my todo list 
+           
             < input type="text" 
                 value={data}
                 onChange={(e) => { setData(e.target.value) }}
