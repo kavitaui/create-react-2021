@@ -1,9 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import "./ToDoList/Style.css"
+const  getLocalData=()=>{
+    const myList = localStorage.getItem("todolist");
+    if(myList){
+        return JSON.parse(myList);
+    }
+    else{
+        return [];
+    }
+}
+
+
 
 const MyTodolist = () => {
-    const [list, setList] = useState([]);
-    const [data, setData] = useState('');
+    const [list, setList] = useState(getLocalData);
+    const [data, setData] = useState("");
     const handleAddtodo = (todo) => {
         debugger;
         if (data.trim() === '') {
@@ -22,9 +33,15 @@ const MyTodolist = () => {
 
         setList(changeData);
     }
-    const removeAll = () => {
-        setData([])
+    const removeAll =()=> {
+        debugger;
+        setList([]);
     }
+    // add data to my local storage
+    useEffect(()=>{
+        localStorage.setItem("todolist",JSON.stringify(list))
+
+    },[list])
     return (
         <div className='active'>
 
