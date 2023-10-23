@@ -5,6 +5,7 @@ import MyUseState from './componant/Hooks/MyUseState';
 import UseEffect from './componant/Hooks/UseEffect';
 import MyTodolist from './MyTodolist';
 import Todolist from './ToDoList/Todolist';
+import Temp from "./componant/Weather/Temp"
 
 const App = () => {
   return (
@@ -18,6 +19,8 @@ const App = () => {
       <UseEffect/>
       <Todolist/>
       <MyTodolist/>
+      <Temp/>
+       
     </div>
   </>
   )
