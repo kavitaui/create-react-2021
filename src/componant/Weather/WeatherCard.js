@@ -2,6 +2,7 @@ import React,{useEffect, useState} from 'react'
 
 const WeatherCard = ( {tempInfo}) => {
     const [weatherState,setWeatherState]= useState("");
+    
   const { temp,
     humidity,
     pressure,
@@ -12,23 +13,32 @@ const WeatherCard = ( {tempInfo}) => {
     sunset
    }= tempInfo;
    useEffect(()=>{
+    debugger;
  if(weathermood){
     switch(weathermood){
-        case "cloud": 
+        case "sunny": 
         setWeatherState("bi-cloud-sun");
             break;
+            case "Smoke": 
+            setWeatherState(" bi-clouds");
+                break;
+        
             case "Haze": 
-            setWeatherState("bi-cloud-fog");
+            setWeatherState("bi-cloud-haze2");
             break;
             case "Clear":
-                 setWeatherState("bi-cloud-sunny");
+                 setWeatherState("bi-brightness-high");
             break;
+            case "Clouds":
+                setWeatherState("bi-cloud");
+           break;
             default:
                 setWeatherState("bi-cloud-sunny");
                 break;
     }
  }
    },[weathermood])
+   console.log(weathermood);
 //    converting the seconds into time
 let sec = sunset;
 let date =new Date(sec*1000);
@@ -38,7 +48,7 @@ let timeStr =`${date.getHours()}:${date.getMinutes()}`
       <article className='widget'>
         <div className='weatherIcon'>
   
-        <i class={"bi " + weatherState}></i>
+        <i className={`bi ${weatherState}`}></i>
         </div>
         <div className='weatherInfo'>
             <div className='temperature'>
